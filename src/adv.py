@@ -41,7 +41,7 @@ room['treasure'].s_to = room['narrow']
 player_name = str(input('Enter your name\n'))
 player = Player(player_name)
 print(player)
-print(room[player.current_room])
+print(room[player.current_room].s_to)
 # Write a loop that:
 #
 # * Prints the current room name
