@@ -40,6 +40,7 @@ room['treasure'].s_to = room['narrow']
 # Make a new player object that is currently in the 'outside' room.
 player_name = str(input('Enter your name\n'))
 player = Player(player_name)
+
 print(player)
 print(room[player.current_room])
 print('Select your next move')
@@ -47,47 +48,48 @@ user = str(input("[n] North  [s] South   [e] East    [w] West  [q] Quit\n"))
 
 while not user == 'q':
     #OUTSIDE
+    current_room = player.current_room
     if(player.current_room == 'outside'):
         if(user == 'n'):
+            print(f'*******************************************\nYou are now in the room {room[player.current_room].player_direction(user).name}\n {room[player.current_room].player_direction(user)} ')
             player.current_room = 'foyer'
-            print(f'*******************************************\n*******************************************\nYou are now in the room {player.current_room}\n {room[player.current_room]} ')
         else:
             print('Error: Move not allowed')
     #FOYER
     elif(player.current_room == 'foyer'):
         if(user == 'n'):
-            player.current_room = 'overlook'
-            print(f'*******************************************\n*******************************************\nYou are now in the room {player.current_room}\n {room[player.current_room]} ')
+             print(f'*******************************************\nYou are now in the room {room[player.current_room].player_direction(user).name}\n {room[player.current_room].player_direction(user)} ')
+             player.current_room = 'overlook'
         elif(user == 's'):
-            player.current_room = 'outside'
-            print(f'*******************************************\n*******************************************\nYou are now in the room {player.current_room}\n {room[player.current_room]} ')
+             print(f'*******************************************\nYou are now in the room {room[player.current_room].player_direction(user).name}\n {room[player.current_room].player_direction(user)} ')
+             player.current_room = 'outside'        
         elif(user == 'e'):
+            print(f'*******************************************\nYou are now in the room {room[player.current_room].player_direction(user).name}\n {room[player.current_room].player_direction(user)} ')
             player.current_room = 'narrow'
-            print(f'*******************************************\n*******************************************\nYou are now in the room {player.current_room}\n {room[player.current_room]} ')
         else:
             print('Error: Move not allowed')
     #OVERLOOK
     elif(player.current_room == 'overlook'):
         if(user == 's'):
+            print(f'*******************************************\nYou are now in the room {room[player.current_room].player_direction(user).name}\n {room[player.current_room].player_direction(user)} ')
             player.current_room = 'foyer'
-            print(f'*******************************************\n*******************************************\nYou are now in the room {player.current_room}\n {room[player.current_room]} ')
         else:
             print('Error: Move not allowed')
     #NARROW
     elif (player.current_room == 'narrow'):
         if(user == 'w'):
+            print(f'*******************************************\nYou are now in the room {room[player.current_room].player_direction(user).name}\n {room[player.current_room].player_direction(user)} ')
             player.current_room = 'foyer'
-            print(f'*******************************************\n*******************************************\nYou are now in the room {player.current_room}\n {room[player.current_room]} ')
-        elif(user == 'n'):
+        elif(user == 'n'):  
+            print(f'*******************************************\nYou are now in the room {room[player.current_room].player_direction(user).name}\n {room[player.current_room].player_direction(user)} ')
             player.current_room = 'treasure'
-            print(f'*******************************************\n*******************************************\nYou are now in the room {player.current_room}\n {room[player.current_room]} ')
         else:
             print('Error: Move not allowed')
     #TREASURE
     elif (player.current_room == 'treasure'):
         if(user == 's'):
+            print(f'*******************************************\nYou are now in the room {room[player.current_room].player_direction(user).name}\n {room[player.current_room].player_direction(user)} ')
             player.current_room = 'narrow'
-            print(f'*******************************************\n*******************************************\nYou are now in the room {player.current_room}\n {room[player.current_room]} ')
         else:
             print('Error: Move not allowed')
 
