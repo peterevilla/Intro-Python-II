@@ -23,5 +23,5 @@ class Room:
             return None
 
     def __str__(self):
-        output = f'{self.name}: {self.description}'
+        output = f'{self.description}'
         return output
