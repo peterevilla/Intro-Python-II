@@ -2,25 +2,10 @@
 # description attributes.
 
 class Room:
-    def __init__(self, name, description):
+    def __init__(self, name, description, list=[]):
         self.name = name
         self.description = description
-        self.n_to = None
-        self.e_to = None
-        self.s_to = None
-        self.w_to = None
-
-    def player_direction(self, direction):
-        if direction == 'n':
-            return self.n_to
-        elif direction == 'e':
-            return self.e_to
-        elif direction == 's':
-            return self.s_to
-        elif direction == 'w':
-            return self.w_to
-        else:
-            return None
+        self.list = list
 
     def __str__(self):
         output = f'{self.description}'
